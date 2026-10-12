@@ -1,0 +1,6 @@
+node_modules/
+.env
+Server_A/node_modules/
+Server_A/.env
+Server_B/node_modules/
+Server_B/.env
