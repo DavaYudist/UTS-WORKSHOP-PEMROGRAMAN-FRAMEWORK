@@ -1,6 +1,25 @@
+# Dependencies
 node_modules/
+**/node_modules/
+
+# Environment configuration
 .env
-Server_A/node_modules/
-Server_A/.env
-Server_B/node_modules/
-Server_B/.env
+.env*.local
+**/.env
+**/.env*.local
+
+# Production builds
+build/
+**/build/
+dist/
+**/dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db

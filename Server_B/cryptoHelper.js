@@ -6,8 +6,14 @@ function decryptData(cipherText) {
   if (!cipherText) {
     return '';
   }
-  const bytes = CryptoJS.AES.decrypt(cipherText, process.env.SECRET_KEY);
-  return bytes.toString(CryptoJS.enc.Utf8);
+  try {
+    const secret = process.env.SECRET_KEY || 'UTS_SECRET_2026_DAVANA';
+    const bytes = CryptoJS.AES.decrypt(cipherText, secret);
+    const decrypted = bytes.toString(CryptoJS.enc.Utf8);
+    return decrypted || cipherText;
+  } catch (e) {
+    return cipherText;
+  }
 }
 
 module.exports = {
